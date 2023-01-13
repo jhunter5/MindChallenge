@@ -1,0 +1,244 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/v1/admin/dashboard_users":
+    get:
+      summary: dashboard_users admin
+      tags:
+      - Admins
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+  "/v1/admin/dashboard_proyects":
+    get:
+      summary: dashboard_proyects admin
+      tags:
+      - Admins
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+  "/v1/admin/user_create":
+    post:
+      summary: create admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/user"
+        description: atributos para crear el usuario
+  "/v1/admin/give_admin":
+    post:
+      summary: give_admin admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/give_admin"
+        description: atributos para dar admin al usuario
+    delete:
+      summary: remove_admin admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/give_admin"
+        description: atributos para quitar admin al usuario
+  "/v1/admin/proyect":
+    post:
+      summary: create_proyect admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/proyect"
+        description: atributos crear el proyecto
+    put:
+      summary: update_proyect admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/proyect_update"
+        description: atributos para actualizar el proyecto
+    delete:
+      summary: destroy_proyect admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/proyect_delete"
+        description: atributos eliminar el proyecto
+  "/v1/admin/user_to_proyect":
+    post:
+      summary: add_user_to_proyect admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/team"
+        description: atributos para añadir un usuario a un proyecto
+    delete:
+      summary: delete_user_from_proyect admin
+      tags:
+      - Admins
+      parameters: []
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/team"
+        description: atributos para eliminar un usuario de un proyecto
+components:
+  securitySchemes:
+    Bearer:
+      description: Tokern bearer del usuario para identificarlo y dar acceso a los
+        recursos
+      type: apiKey
+      in: header
+      name: Authorization
+  schemas:
+    user:
+      type: object
+      properties:
+        email:
+          type: string
+          required: true
+        password:
+          type: string
+          required: true
+      example:
+        user:
+          email: test@test.com
+          password: '123456'
+    give_admin:
+      type: object
+      properties:
+        id:
+          type: integer
+          required: true
+      example:
+        id: 2
+    proyect:
+      type: object
+      properties:
+        proyect_name:
+          type: string
+          required: true
+        client_name:
+          type: string
+          required: true
+        user_id:
+          type: integer
+          required: true
+      example:
+        proyect:
+          proyect_name: api en rails
+          client_name: nigel
+          user_id: 2
+    proyect_update:
+      type: object
+      properties:
+        id:
+          type: integer
+          required: true
+        proyect:
+          type: object
+          required: 'true'
+      example:
+        id: 2
+        proyect:
+          proyect_name: 'api en rails 2 '
+    proyect_delete:
+      type: object
+      properties:
+        id:
+          type: integer
+          required: true
+      example:
+        id: 2
+    team:
+      type: object
+      properties:
+        user_id:
+          type: integer
+          required: true
+        proyect_id:
+          type: integer
+          required: 'true'
+      example:
+        team:
+          user_id: 2
+          proyect_id: 1
+  servers:
+  - url: "{defaultHost}"
+    variables:
+      defaultHost:
+        default: http://localhost:3000
