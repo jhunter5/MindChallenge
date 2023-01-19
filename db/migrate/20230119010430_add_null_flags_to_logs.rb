@@ -1,0 +1,6 @@
+class AddNullFlagsToLogs < ActiveRecord::Migration[7.0]
+  def change
+    change_column_null(:logs, :happened_at, false)
+    change_column_null(:logs, :description, false)
+  end
+end

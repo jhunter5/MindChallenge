@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_17_154156) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_19_010430) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "logs", force: :cascade do |t|
-    t.datetime "happened_at"
-    t.text "description"
+    t.datetime "happened_at", null: false
+    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0, null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_154156) do
     t.bigint "proyect_id", null: false
     t.datetime "added_at"
     t.datetime "deleted_at"
-    t.index ["proyect_id"], name: "index_teams_on_proyect_id" 
+    t.index ["proyect_id"], name: "index_teams_on_proyect_id"
     t.index ["user_id"], name: "index_teams_on_user_id"
   end
 

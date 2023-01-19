@@ -34,7 +34,7 @@ RSpec.describe Proyect, type: :model do
       should validate_presence_of(:user_id)
     end
 
-    it 'Validate if user_id numericality  ' do
+    it 'Validate if user_id is numericality  ' do
       should validate_numericality_of(:user_id)
     end
 
