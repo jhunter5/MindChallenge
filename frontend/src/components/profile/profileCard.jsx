@@ -1,18 +1,17 @@
 export default function ProfileCard({userInfo}){
     return(
-        <div class="border " >
-        <table>
-            <tr>
-                <th>
+        
+        <div classname="container">
+            <div classname='row'>
+                <div classname="col">
                     <img src={userInfo.image} alt="" />
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <h1>{userInfo.name}</h1>
-                </th>
-            </tr>
-        </table>
+                </div>
+            </div>
+            <div classname='row'>
+                <div classname='col'>
+                 <h1>{userInfo.name}</h1>
+                </div>
+            </div>
         </div>
     )
 }
