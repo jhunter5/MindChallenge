@@ -1,12 +1,10 @@
 import './App.css';
 import Navbar from './components/navbar';
+import Footer from './components/footer';
 import ProfileHome from './components/profile/profileHome';
 import AdminHome from './components/adminProfile/adminhome';
 
-function chooseUser(userList, currentId){
-  let currentUser=userList.filter(userList => userList.id == currentId)
-  return JSON.stringify(currentUser)
-}
+
 
 function itsadmin(userInfo){
   return userInfo.role ? true : false;
@@ -15,18 +13,18 @@ function itsadmin(userInfo){
 
 function App() {
   return (
-    <div>
-      {/* {console.log(chooseUser(USERS,2))} */}
+    <section style={{backgroundColor: "white"}}>
       <Navbar/>
       <br/>
-      {}
       {itsadmin(USER) ? <AdminHome userInfo={USER}/> : <ProfileHome userInfo={USER}/>}
-      
-    </div>
+      <br/>
+      <Footer/>
+    </section>
   );
 }
 
-const USER = {id: 1, role:false, name: "Messi", email: "MESSI@gmail.com", englishLevel: "A2", knowledge: "FULBO MUCHO FULBO", linkcv: "link", image: "https://img.a.transfermarkt.technology/portrait/big/28003-1671435885.jpg?lm=1"}
+// Dummy data
+const USER = {id: 1, role:true, name: "Messi", email: "MESSI@gmail.com", englishLevel: "A2", knowledge: "FULBO MUCHO FULBO", linkcv: "link", image: "https://img.a.transfermarkt.technology/portrait/big/28003-1671435885.jpg?lm=1"}
 
 
 

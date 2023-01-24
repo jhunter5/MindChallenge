@@ -1,17 +1,25 @@
+
 export default function ProfileCard({userInfo}){
     return(
-        
-        <div classname="container">
+        <div>
+        <div classname="container p-5 my-5 border">
             <div classname='row'>
-                <div classname="col">
-                    <img src={userInfo.image} alt="" />
+                <div class=" text-center">
+                    <img src={userInfo.image} alt="" class="rounded-circle img-fluid" style={{width: "150px"}}/>
+                    <h1 style={{color: "white"}} >{userInfo.name}</h1>     
                 </div>
             </div>
             <div classname='row'>
                 <div classname='col'>
-                 <h1>{userInfo.name}</h1>
+                 
                 </div>
             </div>
         </div>
+        </div>
+
+        
     )
 }
+
+
+

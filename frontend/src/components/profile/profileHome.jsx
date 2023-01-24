@@ -1,18 +1,25 @@
 import ProfileCard from "./profileCard"
 import ProfileDescription from "./profileDescription"
+import './profile.css';
 
 export default function ProfileHome({userInfo}){
     return(
-        <div class="container">
+        <div>
+        <div class="container my-5">
             <div class= "row">
                 <div class="col">
-                    <h1>Your PROFILE</h1>
                     <br />
+                    <p class="display-1 titulo"> Your profile</p>
                 </div>
             </div>
+        </div>
+        <div>
+        
+        </div>
 
+        <div class="bg-black container p-5 my-5 rounded shadow-lg">
             <div class= 'row'>
-                <div class="col-3">
+                <div class="col">
                     <ProfileCard userInfo={userInfo}/>
                 </div>
                 <div class="col">
@@ -20,6 +27,6 @@ export default function ProfileHome({userInfo}){
                 </div>
             </div>
         </div>
-        
+    </div>
     )
 }
