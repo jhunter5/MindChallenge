@@ -1,3 +1,4 @@
+import ProfileHeader from "./headerProfile";
 import ProfileCard from "./profileCard"
 import ProfileDescription from "./profileDescription"
 import './profile.css';
@@ -5,11 +6,12 @@ import './profile.css';
 export default function ProfileHome({userInfo}){
     return(
         <div>
+        <ProfileHeader/>
         <div class="container my-5">
             <div class= "row">
                 <div class="col">
                     <br />
-                    <p class="display-1 titulo"> Your profile</p>
+                    <p class="display-1 text"> Your profile</p>
                 </div>
             </div>
         </div>
@@ -17,7 +19,7 @@ export default function ProfileHome({userInfo}){
         
         </div>
 
-        <div class="bg-black container p-5 my-5 rounded shadow-lg">
+        <div class="container p-5 my-5 card " >
             <div class= 'row'>
                 <div class="col">
                     <ProfileCard userInfo={userInfo}/>

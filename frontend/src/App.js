@@ -13,7 +13,7 @@ function itsadmin(userInfo){
 
 function App() {
   return (
-    <section style={{backgroundColor: "white"}}>
+    <section style={{backgroundColor: "#eee"}}>
       <Navbar/>
       <br/>
       {itsadmin(USER) ? <AdminHome userInfo={USER}/> : <ProfileHome userInfo={USER}/>}
