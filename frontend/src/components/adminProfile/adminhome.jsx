@@ -3,11 +3,19 @@ import ActionsPanel from "./adminActionsPanel"
 
 export default function AdminHome({userInfo}){
     return(
-        <div>
+        <section>
+
             <ProfileHome userInfo={userInfo}/>
-            <h4>Acciones</h4>
-            <ActionsPanel />
-        </div>
+            
+            <div class='container container p-5 my-5 card'>
+                <div class='row'>
+                    <div class='col'>
+                    <ActionsPanel />
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     )
 }
