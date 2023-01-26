@@ -1,0 +1,22 @@
+.loginCard{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color: aliceblue;
+    border-radius: 25px;
+}
+
+.loginForm{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.imageDiv{
+    padding: 5%;
+    /* margin-left: 5%; */
+}
+
+.logImage{
+ height: 100%; 
+ width: 100%;
+}

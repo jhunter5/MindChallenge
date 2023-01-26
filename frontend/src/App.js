@@ -13,7 +13,7 @@ function itsadmin(userInfo){
 
 function profile(userInfo){
   return(
-  <section style={{backgroundColor: '#eee'}}>
+  <section style={{backgroundColor: '#2E3338'}}>
     <Navbar/>
     <br/>
     {itsadmin(USER) ? <AdminHome userInfo={USER}/> : <ProfileHome userInfo={USER}/>}
