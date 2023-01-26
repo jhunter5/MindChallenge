@@ -3,7 +3,7 @@ import ActionsPanel from "./adminActionsPanel"
 
 export default function AdminHome({userInfo}){
     return(
-        <section>
+        <section >
 
             <ProfileHome userInfo={userInfo}/>
             

@@ -3,24 +3,45 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ProfileHome from './components/profile/profileHome';
 import AdminHome from './components/adminProfile/adminhome';
-
+import LoginHome from './components/login/login';
 
 
 function itsadmin(userInfo){
   return userInfo.role ? true : false;
 }
 
+function profile(userInfo){
+  return(
+  <section style={{backgroundColor: '#eee'}}>
+    <Navbar/>
+    <br/>
+    {itsadmin(USER) ? <AdminHome userInfo={USER}/> : <ProfileHome userInfo={USER}/>}
+    <br/>
+    <Footer/>
+  </section>
+  )
+}
+
+function login(){
+  return(
+    <section style={{backgroundColor: '#2E3338'}}>
+      <Navbar/>
+      <br/>
+      <br/>
+      <br/>
+      <LoginHome/>
+      <Footer/>
+      <br/>
+    </section>
+  )
+}
+
 
 function App() {
   return (
-    <section style={{backgroundColor: "#eee"}}>
-      <Navbar/>
-      <br/>
-      {itsadmin(USER) ? <AdminHome userInfo={USER}/> : <ProfileHome userInfo={USER}/>}
-      <br/>
-      <Footer/>
-    </section>
-  );
+    // profile(USER)
+    login()
+  )
 }
 
 // Dummy data
