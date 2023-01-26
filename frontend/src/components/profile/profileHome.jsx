@@ -19,7 +19,7 @@ export default function ProfileHome({userInfo}){
         
         </div>
 
-        <div class="container p-5 my-5 card " >
+        <div class="container p-5 my-5 card "  >
             <div class= 'row'>
                 <div class="col">
                     <ProfileCard userInfo={userInfo}/>

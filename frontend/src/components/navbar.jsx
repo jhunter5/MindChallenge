@@ -1,7 +1,7 @@
 export default function Navbar(){
     return (
         <div>
-         <nav class="navbar navbar-dark bg-dark">
+         <nav class="navbar navbar-dark bg-dark fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand">Navbar</a>
               <form class="d-flex">

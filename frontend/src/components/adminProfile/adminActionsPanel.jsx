@@ -10,13 +10,13 @@ export default function ActionsPanel(){
             <br />
             <div class='row align-items-center text-center '>
                 <div class='col'>
-                    <button class="btn btn-light">Listar usuarios</button>
+                    <button class="btn btn-dark">Listar usuarios</button>
                 </div>
                 <div class='col'>
-                    <button class="btn btn-light" >Listar proyectos</button>
+                    <button class="btn btn-dark" >Listar proyectos</button>
                 </div>
                 <div class='col'>
-                    <button class="btn btn-light" >Consultar logs</button>
+                    <button class="btn btn-dark" >Consultar logs</button>
                 </div>
             </div>
         </div>
