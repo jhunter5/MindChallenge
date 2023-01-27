@@ -3,8 +3,8 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ProfileHome from './components/profile/profileHome';
 import AdminHome from './components/adminProfile/adminhome';
-import LoginHome from './components/login/login';
-import LogInScreen from './components/authScreens/LogInScreen';
+import SingUpHome from './components/singUp/singUp';
+import SingInHome from './components/singIn/singIn';
 
 
 function itsadmin(userInfo){
@@ -23,17 +23,32 @@ function profile(userInfo){
   )
 }
 
-function login(){
+function singUp(){
   return(
     <section style={{backgroundColor: '#2E3338'}}>
       <Navbar/>
       <br/>
       <br/>
       <br/>
-      <LoginHome/>
+      <SingUpHome/>
       <Footer/>
       <br/>
     </section>
+  )
+}
+
+function singIn(){
+  return(
+  <section style={{backgroundColor: '#2E3338'}}>
+    <Navbar/>
+    <br/>
+    <br/>
+    <br/>
+    <SingInHome/>
+    <Footer/>
+    <br/>
+</section>
+
   )
 }
 
@@ -43,7 +58,8 @@ function login(){
 function App() {
   return (
     // profile(USER)
-    login()
+    singUp()
+    // singIn()
     // <LogInScreen/>
   )
 }
