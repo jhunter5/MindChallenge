@@ -1,9 +1,9 @@
-import './login.css';
+import './singUp.css';
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import {signUpUser} from "../../store/slice";
 
-export default function LoginHome(){
+export default function SingUpHome(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
@@ -13,18 +13,18 @@ export default function LoginHome(){
         dispatch(signUpUser({"user": {"email": email, "password": password, "role": 0}}))
     }
     return(
-        <div class="container-md p-5 border loginCard">
+        <div class="container-md p-5 border signUpCard">
             <div class='row'>
             <div class="col-6 border p-5 ">
-                <div class="greetingsDiv ">
-                    <h1>Welcome back</h1>
-                    <p>Welcome back, please log in</p>
+                <div class="greetingsDiv">
+                    <h1>Join Us</h1>
+                    <p>Please Sign Up</p>
                     <br />
                     <button class="">Ingresa con google </button>
                 </div>
                 <br /> 
-                <div class="loginDiv">
-                <form class="loginForm">
+                <div class="">
+                <form class="signUpForm">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)}/>
@@ -45,7 +45,7 @@ export default function LoginHome(){
             </div>    
             <div class="col-6 border">
                 {/* <div class="imageDiv"> */}
-                    <img class='logImage img-fluid'src="https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" />
+                    <img class='signUpImage img-fluid'src="https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" />
                 {/* </div> */}
             </div>
             </div>
