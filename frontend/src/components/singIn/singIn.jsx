@@ -1,4 +1,6 @@
 import './singIn.css';
+import { ReactComponent as Logo } from './sigin.svg';
+
 
 export default function SingInHome(){
     return(
@@ -31,9 +33,8 @@ export default function SingInHome(){
                 </form>
                 </div>
             </div>
-            <div className='col-6'>
-                
-
+            <div className='col-6 border'>
+                <Logo/>
             </div>
            </div >
         </div>

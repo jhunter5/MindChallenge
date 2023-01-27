@@ -1,4 +1,5 @@
 import './singUp.css';
+import { ReactComponent as Logo } from './singup.svg';
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import {signUpUser} from "../../store/slice";
@@ -15,7 +16,7 @@ export default function SingUpHome(){
     return(
         <div class="container-md p-5 border signUpCard">
             <div class='row'>
-            <div class="col-6 border p-5 ">
+            <div class="col-6 p-5 ">
                 <div class="greetingsDiv">
                     <h1>Join Us</h1>
                     <p>Please Sign Up</p>
@@ -43,10 +44,8 @@ export default function SingUpHome(){
                 </div>
                 
             </div>    
-            <div class="col-6 border">
-                {/* <div class="imageDiv"> */}
-                    <img class='signUpImage img-fluid'src="https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" />
-                {/* </div> */}
+            <div class="col-6 ">
+                <Logo style={{width: '100%'}}/>
             </div>
             </div>
         </div> 
